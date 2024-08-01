@@ -92,8 +92,8 @@ import {
     WebGLRenderer
 } from 'three';
 
-// const width = 960;
-// const height = 540;
+const width = 960;
+const height = 540;
 
 // レンダラーを作成
 // const renderer = new WebGLRenderer({
@@ -118,11 +118,10 @@ const material = new MeshStandardMaterial({color: 0x0000FF});
 const box = new Mesh(geometry, material);
 scene.add(box);
 
-// 単純に２つ重ねてもだめっぽい
-// const cube_geometry = new BoxGeometry(100, 100, 100);
-// const cube_material = new MeshBasicMaterial({color: 0x00ff00});
-// const cube = new Mesh(cube_geometry, cube_material);
-// scene.add(cube);
+const cube_geometry = new BoxGeometry(700, 100, 100);
+const cube_material = new MeshBasicMaterial({color: 0x00ff00});
+const cube = new Mesh(cube_geometry, cube_material);
+scene.add(cube);
 
 // 平行光源
 const light = new DirectionalLight(0xFFFFFF);
@@ -141,6 +140,10 @@ function tick() {
     box.rotation.x += 0.01;
     box.rotation.y += 0.01;
 
+    cube.rotation.x += 0.1;
+    // cube.rotation.y += 0.1;
+
     // レンダリング
     renderer.render(scene, camera);
 }
+
