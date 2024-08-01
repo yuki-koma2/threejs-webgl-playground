@@ -91,6 +91,7 @@ import {
     Scene,
     WebGLRenderer
 } from 'three';
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
 const width = 960;
 const height = 540;
@@ -99,7 +100,10 @@ const height = 540;
 // const renderer = new WebGLRenderer({
 //     canvas: document.querySelector('#myCanvas')
 // });
+const loader = new GLTFLoader();
+
 const renderer = new WebGLRenderer();
+
 // renderer.setSize(width, height);
 renderer.setSize(window.innerWidth, window.innerHeight);
 // renderer.setPixelRatio(devicePixelRatio);
